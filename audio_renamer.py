@@ -109,12 +109,14 @@ def user_input(file_name, options):
 
 def main():
     "Renames the mp3 files based on the data from acoustid"
-    global apikey
-    apikey = load_apikey()
-
     global automation
     audio_path, automation, name_style = call_parser()
     audio_list = mp3files(audio_path)
+
+    global apikey
+    apikey = load_apikey()
+
+
 
     for name in audio_list:
         n_path = join(audio_path, name)
